@@ -6,6 +6,7 @@ abstract class Palette {
   static const Color primary = Color(0xff165102);
   static const Color scaffoldBackgroundColor = Color(0xffFFFFFF);
   static const Color labeltextcolor = Color.fromARGB(255, 0, 0, 0);
+  static const Color bgcolor = Color.fromARGB(255, 23, 23, 30);
   static const Color trasperant = Colors.transparent;
   static const Color onboardingtext = Color.fromARGB(255, 223, 222, 222);
 }

@@ -28,6 +28,15 @@ class $AssetsImagesGen {
   AssetGenImage get logoWhite =>
       const AssetGenImage('assets/images/logo_white.png');
 
+  /// File path: assets/images/onb1.jpg
+  AssetGenImage get onb1 => const AssetGenImage('assets/images/onb1.jpg');
+
+  /// File path: assets/images/onb2.jpg
+  AssetGenImage get onb2 => const AssetGenImage('assets/images/onb2.jpg');
+
+  /// File path: assets/images/onb3.jpg
+  AssetGenImage get onb3 => const AssetGenImage('assets/images/onb3.jpg');
+
   /// File path: assets/images/onbaordingimg1.png
   AssetGenImage get onbaordingimg1 =>
       const AssetGenImage('assets/images/onbaordingimg1.png');
@@ -53,6 +62,9 @@ class $AssetsImagesGen {
     logo,
     logoBlack,
     logoWhite,
+    onb1,
+    onb2,
+    onb3,
     onbaordingimg1,
     onboadingbg,
     onboardingimg2,

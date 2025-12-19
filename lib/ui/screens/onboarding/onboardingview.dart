@@ -19,7 +19,7 @@ class Onboardingview extends StatelessWidget {
         return Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: Assets.images.onboadingbg.image().image,
+              image: data['image'] as ImageProvider,
               fit: BoxFit.cover,
             ),
           ),
@@ -38,21 +38,36 @@ class Onboardingview extends StatelessWidget {
     Map<String, dynamic> data,
     Onboardingviewmodel viewModel,
   ) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 16),
-      child: Column(
-        mainAxisAlignment: .spaceBetween,
-        children: [
-          const Spacer(),
-          //Image Container
-          imagecontainer(context, data),
-          const SizedBox(height: 76),
-          // Description and Indicator
-          descriptionandindicator(data, viewModel),
-          const SizedBox(height: 24),
-          //Next Button
-          Button(viewModel, context),
-        ],
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            Colors.transparent,
+            Colors.black12,
+            Colors.black12,
+            Colors.black26,
+            Colors.black54,
+            Colors.black87,
+            Colors.black87,
+          ],
+          begin: .topCenter,
+          end: .bottomCenter,
+        ),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 16),
+        child: Column(
+          mainAxisAlignment: .spaceBetween,
+          children: [
+            const Spacer(),
+            const SizedBox(height: 76),
+            // Description and Indicator
+            descriptionandindicator(data, viewModel),
+            const SizedBox(height: 24),
+            //Next Button
+            Button(viewModel, context),
+          ],
+        ),
       ),
     );
   }
@@ -122,20 +137,6 @@ class Onboardingview extends StatelessWidget {
           ),
         ),
       ],
-    );
-  }
-
-  //Image Container
-  Widget imagecontainer(BuildContext context, Map<String, dynamic> data) {
-    return Container(
-      width: MediaQuery.sizeOf(context).width * .8,
-      height: MediaQuery.sizeOf(context).height * .3,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: data['image'] as ImageProvider,
-          fit: BoxFit.cover,
-        ),
-      ),
     );
   }
 }

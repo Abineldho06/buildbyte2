@@ -57,6 +57,8 @@ dev_dependencies:
   stacked_generator: ^2.0.0
   build_runner: ^2.6.0
   flutter_gen_runner: ^5.12.0
+  firebase_core: ^3.7.0
+  firebase_auth: ^5.3.0
   
 
 

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "709244109082",
+    "project_id": "buildbyte-a552f",
+    "storage_bucket": "buildbyte-a552f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:709244109082:android:b10c19e3c6b0bfd6042ca3",
+        "android_client_info": {
+          "package_name": "com.example.build_byte"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQsFOwsNYXSQXZJYWEMAgXmiFwht0x_T0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -23,7 +23,7 @@ class Splashview extends StatelessWidget {
       builder:
           (BuildContext context, SplashViewModel viewModel, Widget? child) {
             return Scaffold(
-              backgroundColor: Palette.scaffoldBackgroundColor,
+              backgroundColor: Palette.bgcolor,
               body: body(context),
             );
           },
@@ -44,14 +44,18 @@ class Splashview extends StatelessWidget {
   Widget appnametext() {
     return Text(
       'Build Byte',
-      style: GoogleFonts.poppins(fontWeight: .bold, fontSize: 35),
+      style: GoogleFonts.poppins(
+        fontWeight: .bold,
+        fontSize: 35,
+        color: Palette.onboardingtext,
+      ),
     );
   }
 
   //Logo Section
   Widget logo(BuildContext context) {
     return Center(
-      child: Assets.images.logoBlack.image(
+      child: Assets.images.logoWhite.image(
         height: MediaQuery.sizeOf(context).height * .16,
         width: MediaQuery.sizeOf(context).width * .29,
         fit: BoxFit.fill,

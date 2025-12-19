@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:build_byte/firebase_options.dart' show DefaultFirebaseOptions;
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -11,6 +13,10 @@ import 'package:build_byte/app/app.router.dart';
 import 'package:build_byte/constants/app_strings.dart';
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
@@ -18,14 +24,10 @@ Future<void> main() async {
 
   if (!kIsWeb) {
     if (Platform.isAndroid) {
-      // ByteData data = await PlatformAssetBundle().load(
-      //   Assets.ca.letsEncryptR3,
-      // );
-      // SecurityContext.defaultContext.setTrustedCertificatesBytes(
-      //   data.buffer.asUint8List(),
-      // );
+      // Android specific logic (optional)
     }
   }
+
   setupDependencies();
   runApp(const MyApp());
 }
@@ -43,16 +45,21 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(scaffoldBackgroundColor: const Color(0xFFFFFBF1)),
       title: AppStrings.appName,
+
       builder: (context, child) {
         ScreenSize.init(context);
-        FlutterSmartDialog.init();
-        return MediaQuery(
-          data: MediaQuery.of(
-            context,
-          ).copyWith(textScaler: const TextScaler.linear(1)),
-          child: child!,
+
+        return FlutterSmartDialog.init()(
+          context,
+          MediaQuery(
+            data: MediaQuery.of(
+              context,
+            ).copyWith(textScaler: const TextScaler.linear(1)),
+            child: child!,
+          ),
         );
       },
+
       navigatorKey: StackedService.navigatorKey,
       onGenerateRoute: StackedRouter().onGenerateRoute,
       navigatorObservers: [

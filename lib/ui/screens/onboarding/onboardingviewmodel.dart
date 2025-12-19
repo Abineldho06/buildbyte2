@@ -11,16 +11,16 @@ class Onboardingviewmodel extends BaseViewModel {
   //Onboarding Screen Data.
   final List<Map<String, dynamic>> onboardingData = [
     {
-      "image": Assets.images.onbaordingimg1.provider(),
+      "image": Assets.images.onb1.provider(),
       "description": "Choose the right components without confusion.",
     },
     {
-      "image": Assets.images.onboardingimg2.provider(),
+      "image": Assets.images.onb2.provider(),
       "description":
           "Get expert guidance and clear support at every step of your PC build.",
     },
     {
-      "image": Assets.images.onboardingimg3.provider(),
+      "image": Assets.images.onb3.provider(),
       "description":
           "Build your dream PC with confidence, clarity, and complete control.",
     },
@@ -32,7 +32,7 @@ class Onboardingviewmodel extends BaseViewModel {
       _currentIndex++;
       notifyListeners();
     } else {
-      navigationService.pushNamedAndRemoveUntil(Routes.loginview);
+      navigationService.pushNamedAndRemoveUntil(Routes.loginView);
     }
   }
 }
