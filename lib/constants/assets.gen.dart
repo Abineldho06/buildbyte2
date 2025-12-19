@@ -14,11 +14,17 @@ import 'package:flutter/widgets.dart';
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
-  /// File path: assets/images/banner.png
-  AssetGenImage get banner => const AssetGenImage('assets/images/banner.png');
+  /// File path: assets/images/background.jpg
+  AssetGenImage get background =>
+      const AssetGenImage('assets/images/background.jpg');
 
-  /// File path: assets/images/logo.png
-  AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
+  /// File path: assets/images/background2.jpg
+  AssetGenImage get background2 =>
+      const AssetGenImage('assets/images/background2.jpg');
+
+  /// File path: assets/images/login_bg.jpg
+  AssetGenImage get loginBg =>
+      const AssetGenImage('assets/images/login_bg.jpg');
 
   /// File path: assets/images/logo_black.png
   AssetGenImage get logoBlack =>
@@ -53,13 +59,11 @@ class $AssetsImagesGen {
   AssetGenImage get onboardingimg3 =>
       const AssetGenImage('assets/images/onboardingimg3.png');
 
-  /// File path: assets/images/rahul.jpeg
-  AssetGenImage get rahul => const AssetGenImage('assets/images/rahul.jpeg');
-
   /// List of all assets
   List<AssetGenImage> get values => [
-    banner,
-    logo,
+    background,
+    background2,
+    loginBg,
     logoBlack,
     logoWhite,
     onb1,
@@ -69,7 +73,6 @@ class $AssetsImagesGen {
     onboadingbg,
     onboardingimg2,
     onboardingimg3,
-    rahul,
   ];
 }
 

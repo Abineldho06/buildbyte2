@@ -1,3 +1,4 @@
+import 'package:build_byte/app/utils.dart';
 import 'package:build_byte/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
@@ -128,5 +129,10 @@ class SignUpViewModel extends BaseViewModel {
 
       setBusy(false);
     }
+  }
+
+  void gotoLoginScreen() {
+    navigationService.clearStackAndShow(Routes.loginView);
+    notifyListeners();
   }
 }
