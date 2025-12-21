@@ -11,6 +11,7 @@ import 'package:stacked_services/src/navigation/navigation_service.dart';
 import 'package:stacked_services/src/snackbar/snackbar_service.dart';
 import 'package:stacked_shared/stacked_shared.dart';
 
+import '../services/address_service.dart';
 import '../services/api_services.dart';
 import '../services/authservice.dart';
 import '../services/user_service.dart';
@@ -28,9 +29,10 @@ Future<void> setupLocator({
   );
 
   // Register dependencies
-  locator.registerLazySingleton(() => ApiService());
   locator.registerLazySingleton(() => NavigationService());
-  locator.registerLazySingleton(() => UserService());
   locator.registerLazySingleton(() => SnackbarService());
   locator.registerLazySingleton(() => AuthService());
+  locator.registerLazySingleton(() => AddressService());
+  locator.registerLazySingleton(() => ApiService());
+  locator.registerLazySingleton(() => UserService());
 }

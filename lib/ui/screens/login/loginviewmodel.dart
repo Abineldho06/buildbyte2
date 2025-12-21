@@ -85,10 +85,7 @@ class LoginViewModel extends BaseViewModel {
           backgroundColor: Colors.greenAccent,
         );
 
-        _navigationService.clearStackAndShow(
-          Routes.homeview,
-          arguments: HomeviewArguments(username: emailController.text.trim()),
-        );
+        _navigationService.clearStackAndShow(Routes.homeview);
       } else {
         _snackbarService.showSnackbar(
           message: 'Invalid email or password',

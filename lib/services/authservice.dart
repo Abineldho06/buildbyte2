@@ -5,6 +5,7 @@ class AuthService {
 
   User? get currentUser => _auth.currentUser;
 
+  ///User Registeration.
   Future<User?> signUp(String email, String password) async {
     final result = await _auth.createUserWithEmailAndPassword(
       email: email,
@@ -13,6 +14,7 @@ class AuthService {
     return result.user;
   }
 
+  //Login Function
   Future<User?> login(String email, String password) async {
     final result = await _auth.signInWithEmailAndPassword(
       email: email,
@@ -21,6 +23,7 @@ class AuthService {
     return result.user;
   }
 
+  ///Logout Function
   Future<void> logout() async {
     await _auth.signOut();
   }
