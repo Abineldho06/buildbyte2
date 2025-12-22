@@ -1,6 +1,4 @@
 import 'package:build_byte/constants/app_colors.dart';
-import 'package:build_byte/constants/assets.gen.dart';
-import 'package:build_byte/ui/screens/login/loginview.dart';
 import 'package:build_byte/ui/screens/onboarding/onboardingviewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';

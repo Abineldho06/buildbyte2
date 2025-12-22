@@ -1,5 +1,7 @@
 import 'package:build_byte/services/address_service.dart';
 import 'package:build_byte/services/authservice.dart';
+import 'package:build_byte/ui/screens/account/accountview.dart';
+import 'package:build_byte/ui/screens/add_address/add_addressview.dart';
 import 'package:build_byte/ui/screens/forgotpassword/forgotpassview.dart';
 import 'package:build_byte/ui/screens/home/homeview.dart';
 import 'package:build_byte/ui/screens/login/loginview.dart';
@@ -20,6 +22,8 @@ import '../services/user_service.dart';
     MaterialRoute(page: SignUpView),
     MaterialRoute(page: Forgotpassview),
     MaterialRoute(page: Homeview),
+    MaterialRoute(page: AddAddressview),
+    MaterialRoute(page: Accountview),
   ],
   dependencies: [
     LazySingleton(classType: NavigationService),
