@@ -21,26 +21,32 @@ class Accountview extends StatelessWidget {
             return Scaffold(
               appBar: AppBar(title: Text("Account")),
               body: viewModel.isBusy
-                  ? CircularProgressIndicator()
+                  ? Center(
+                      child: CircularProgressIndicator(color: Colors.black),
+                    )
                   : viewModel.selectedAddress == null
-                  ? addaddress()
+                  ? addaddress(viewModel)
                   : isAddressAvailable(viewModel),
             );
           },
     );
   }
 
-  Widget addaddress() {
-    return Column(
-      children: [
-        Text("No Account Details Available"),
-        ElevatedButton(
-          onPressed: () {
-            navigationService.navigateTo(Routes.addAddressview);
-          },
-          child: Text('Add Address'),
-        ),
-      ],
+  Widget addaddress(Accountviewmodel viewModel) {
+    return Center(
+      child: Column(
+        mainAxisAlignment: .center,
+        children: [
+          Text("No Account Details Available"),
+          ElevatedButton(
+            onPressed: () async {
+              await navigationService.navigateTo(Routes.addAddressview);
+              viewModel.loadAddress();
+            },
+            child: Text('Add Address'),
+          ),
+        ],
+      ),
     );
   }
 
@@ -71,7 +77,9 @@ class Accountview extends StatelessWidget {
           Text('${address.town}, ${address.state} - ${address.pincode}'),
           const SizedBox(height: 24),
           ElevatedButton(
-            onPressed: () => viewModel.editAddress(address),
+            onPressed: () {
+              viewModel.editAddress(address);
+            },
             child: const Text('Edit Address'),
           ),
         ],

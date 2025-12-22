@@ -22,6 +22,7 @@ class Accountviewmodel extends BaseViewModel {
     setBusy(true);
     addresses = await _addressService.getAddresses();
     setBusy(false);
+    notifyListeners();
   }
 
   void addNewAddress() {
